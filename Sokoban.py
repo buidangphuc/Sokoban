@@ -50,7 +50,7 @@ class Menu:
                 sokoban = Game(window)
                 sokoban.index_level = 16
                 sokoban.load_level()
-                sokoban.start()
+                sokoban.start(play_music=False)
             elif x > self.tutorial_txt_position[0] and x < self.tutorial_txt_position[0] + self.tutorial_txt_surface.get_width() \
             and y > 440 and y < 440 + self.tutorial_txt_surface.get_height():
                 self.tutorial_active = True
@@ -217,7 +217,7 @@ def main():
         if event.type == KEYDOWN:
             if event.key == K_j:
                 sokoban = Game(window)
-                sokoban.start()
+                sokoban.start(play_music=False)
             elif event.key == K_c:
                 sokoban = Game(window)
             elif event.key == K_ESCAPE:

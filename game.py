@@ -51,7 +51,7 @@ class Game:
         self.window = window
         self.load_textures()
         self.player = None
-        self.index_level = 1
+        self.index_level = 13
         self.load_level()
         self.play = True
         self.player_interface = PlayerInterface(self.player, self.level)
@@ -92,14 +92,15 @@ class Game:
             self.player = Player(self.level)
             self.player.move_count = 0
 
-    def start(self):
+    def start(self,play_music=True):
         """
         Starts the game loop.
 
         Returns:
             None
         """
-        self.bg_music.play(-1)
+        if play_music:
+            self.bg_music.play(-1)
         while self.play:
             self.process_event(pygame.event.wait())
             self.update_screen()
